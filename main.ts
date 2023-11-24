@@ -1,12 +1,12 @@
 /* Copyright (c) 2020 MTHS All rights reserved
  *
- * Created by: Mr. Coxall
- * Created on: Sep 2020
+ * Created by: Ihor Chernyshev
+ * Created on: Nov 2023
  * This program make a 28BYJ-48 DC 5V stepper motor move
 */
 
 // variables
-let distance = 11
+let distance = 0
 
 // setup
 basic.showIcon(IconNames.Heart)
@@ -16,7 +16,6 @@ while (true) {
   if (input.buttonIsPressed(Button.A) == true) {
     while (true) {
       if (distance >= 10) {
-        // move car forwards and backwards
         basic.showIcon(IconNames.Happy)
         robotbit.StpCarMove(0.1, 1)
         distance = sonar.ping(
