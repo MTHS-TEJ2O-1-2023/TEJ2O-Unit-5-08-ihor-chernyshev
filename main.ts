@@ -6,30 +6,29 @@
 */
 
 // variables
-let distance = 0
+let distance = 11
 
 // setup
 basic.showIcon(IconNames.Heart)
 
 // loop forever
 while (true) {
-    if (input.buttonIsPressed(Button.A) == true) {
+  if (input.buttonIsPressed(Button.A) == true) {
+    while (true) {
+      if (distance >= 10) {
+        // move car forwards and backwards
+        basic.showIcon(IconNames.Happy)
+        robotbit.StpCarMove(0.1, 1)
         distance = sonar.ping(
-            DigitalPin.P1,
-            DigitalPin.P2,
-            PingUnit.Centimeters
+        DigitalPin.P1,
+        DigitalPin.P2,
+        PingUnit.Centimeters
         )
-        while (distance <= 10) {
-            // move car forwards and backwards
-            basic.showNumber(distance)
-            robotbit.StpCarMove(1,1)
-            basic.pause(500)
-            basic.showIcon(IconNames.Yes)
-            distance = sonar.ping(
-                DigitalPin.P1,
-                DigitalPin.P2,
-                PingUnit.Centimeters
-            )
-        }
+      }
+      else {
+        basic.showIcon(IconNames.Sad)
+        robotbit.StpCarTurn
+      }
     }
+  }
 }
