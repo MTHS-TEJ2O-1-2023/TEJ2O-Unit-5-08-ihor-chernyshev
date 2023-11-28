@@ -14,6 +14,12 @@ basic.showIcon(IconNames.Heart)
 // loop forever
 while (true) {
   if (input.buttonIsPressed(Button.A) === true) {
+    distance = sonar.ping(
+      DigitalPin.P1,
+      DigitalPin.P2,
+      PingUnit.Centimeters
+    )
+    basic.showNumber(distance)
     while (true) {
       if (distance >= 10) {
         basic.showIcon(IconNames.Happy)
@@ -28,6 +34,11 @@ while (true) {
       {
         basic.showIcon(IconNames.Sad)
         robotbit.StpCarTurn(90, 1, 1)
+        distance = sonar.ping(
+          DigitalPin.P1,
+          DigitalPin.P2,
+          PingUnit.Centimeters
+        )
       }
     }
   }
