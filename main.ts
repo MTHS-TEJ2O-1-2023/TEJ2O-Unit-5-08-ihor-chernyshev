@@ -27,8 +27,8 @@ while (true) {
         distance = sonar.ping(
           DigitalPin.P1,
           DigitalPin.P2,
-          PingUnit.Centimeters
-        ) }
+          PingUnit.Centimeters) 
+      }
       else {
         basic.showIcon(IconNames.Sad)
         robotbit.StpCarTurn(90, 1, 1)
