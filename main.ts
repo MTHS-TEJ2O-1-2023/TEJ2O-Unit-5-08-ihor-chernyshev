@@ -19,24 +19,21 @@ while (true) {
       DigitalPin.P2,
       PingUnit.Centimeters
     )
-    basic.showNumber(distance)
-    while (true) {
-      if (distance >= 10) {
-        basic.showIcon(IconNames.Happy)
-        robotbit.StpCarMove(0.1, 1)
-        distance = sonar.ping(
-          DigitalPin.P1,
-          DigitalPin.P2,
-          PingUnit.Centimeters)
-      } else {
-        basic.showIcon(IconNames.Sad)
-        robotbit.StpCarTurn(90, 1, 1)
-        distance = sonar.ping(
-          DigitalPin.P1,
-          DigitalPin.P2,
-          PingUnit.Centimeters
-        )
-      }
-    }
+  basic.showNumber(distance)
+  while (distance >= 10) {
+    basic.showIcon(IconNames.Happy)
+    robotbit.StpCarMove(0.01, 1)
+    distance = sonar.ping(
+        DigitalPin.P1,
+        DigitalPin.P2,
+        PingUnit.Centimeters)
+    } 
+  basic.showIcon(IconNames.Sad)
+  robotbit.StpCarTurn(90, 1, 1)
+  distance = sonar.ping(
+    DigitalPin.P1,
+    DigitalPin.P2,
+    PingUnit.Centimeters
+  )
   }
 }
