@@ -25,17 +25,17 @@ while (true) {
         basic.showIcon(IconNames.Happy)
         robotbit.StpCarMove(0.1, 1)
         distance = sonar.ping(
-            DigitalPin.P1,
-            DigitalPin.P2,
-            PingUnit.Centimeters)
-        } 
-    basic.showIcon(IconNames.Sad)
-    robotbit.StpCarTurn(90, 1, 1)
-    distance = sonar.ping(
+          DigitalPin.P1,
+          DigitalPin.P2,
+          PingUnit.Centimeters)
+        }
+      basic.showIcon(IconNames.Sad)
+      robotbit.StpCarTurn(90, 1, 1)
+      distance = sonar.ping(
         DigitalPin.P1,
         DigitalPin.P2,
         PingUnit.Centimeters
-    )
+      )
     }
   }
 }
