@@ -14,6 +14,7 @@ basic.showIcon(IconNames.Heart)
 // loop forever
 while (true) {
   if (input.buttonIsPressed(Button.A) === true) {
+    // measures the distance
     distance = sonar.ping(
       DigitalPin.P1,
       DigitalPin.P2,
