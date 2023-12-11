@@ -33,7 +33,8 @@ while (true) {
       }
       // turns 90 degrees
       basic.showIcon(IconNames.Sad)
-      robotbit.StpCarMove(-1, 1)
+      robotbit.StpCarMove(-0.3, 1) 
+      basic.showIcon(IconNames.SmallSquare)
       robotbit.StpCarTurn(90, 0.1, 0.1)
       distance = sonar.ping(
         DigitalPin.P1,
