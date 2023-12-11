@@ -31,9 +31,13 @@ while (true) {
           DigitalPin.P2,
           PingUnit.Centimeters)
       }
-      while (distance <= 10) {
+      while (distance < 10) {
         basic.showIcon(IconNames.Sad)
         robotbit.StpCarMove(-0.1, 1)
+        distance = sonar.ping(
+          DigitalPin.P1,
+          DigitalPin.P2,
+          PingUnit.Centimeters)
       }
       // turns 90 degrees
       basic.showIcon(IconNames.SmallSquare)
